@@ -1,0 +1,4 @@
+FurnaceExpManager
+=================
+
+CraftBukkit FurnaceExpManager Plugin
