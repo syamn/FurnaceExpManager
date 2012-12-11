@@ -147,7 +147,7 @@ public class Metrics {
      * Construct and create a Graph that can be used to separate specific
      * plotters to their own graphs on the metrics website. Plotters can be
      * added to the graph object returned.
-     *
+     * 
      * @param name
      * @return Graph object created. Will never return NULL under normal
      *         circumstances unless bad parameters are given
@@ -170,7 +170,7 @@ public class Metrics {
     /**
      * Add a Graph object to Metrics that represents data for the plugin that
      * should be sent to the backend
-     *
+     * 
      * @param graph
      */
     public void addGraph(final Graph graph) {
@@ -183,7 +183,7 @@ public class Metrics {
 
     /**
      * Adds a custom data plotter to the default graph
-     *
+     * 
      * @param plotter
      */
     public void addCustomData(final Plotter plotter) {
@@ -203,7 +203,7 @@ public class Metrics {
      * repeating task as the plugin and send the initial data to the metrics
      * backend, and then after that it will post in increments of PING_INTERVAL
      * * 1200 ticks.
-     *
+     * 
      * @return True if statistics measuring is running, otherwise false.
      */
     public boolean start() {
@@ -269,7 +269,7 @@ public class Metrics {
 
     /**
      * Has the server owner denied plugin metrics?
-     *
+     * 
      * @return
      */
     public boolean isOptOut() {
@@ -293,7 +293,7 @@ public class Metrics {
     /**
      * Enables metrics for the server by setting "opt-out" to false in the
      * config file and starting the metrics task.
-     *
+     * 
      * @throws IOException
      */
     public void enable() throws IOException {
@@ -317,7 +317,7 @@ public class Metrics {
     /**
      * Disables metrics for the server by setting "opt-out" to true in the
      * config file and canceling the metrics task.
-     *
+     * 
      * @throws IOException
      */
     public void disable() throws IOException {
@@ -447,7 +447,7 @@ public class Metrics {
     /**
      * Check if mineshafter is present. If it is, we need to bypass it to send
      * POST requests
-     *
+     * 
      * @return
      */
     private boolean isMineshafterPresent() {
@@ -469,7 +469,7 @@ public class Metrics {
      * data.append(encode("guid")).append('=').append(encode(guid));
      * encodeDataPair(data, "version", description.getVersion());
      * </code>
-     *
+     * 
      * @param buffer
      * @param key
      * @param value
@@ -484,7 +484,7 @@ public class Metrics {
 
     /**
      * Encode text as UTF-8
-     *
+     * 
      * @param text
      * @return
      */
@@ -515,7 +515,7 @@ public class Metrics {
 
         /**
          * Gets the graph's name
-         *
+         * 
          * @return
          */
         public String getName() {
@@ -524,7 +524,7 @@ public class Metrics {
 
         /**
          * Add a plotter to the graph, which will be used to plot entries
-         *
+         * 
          * @param plotter
          */
         public void addPlotter(final Plotter plotter) {
@@ -533,7 +533,7 @@ public class Metrics {
 
         /**
          * Remove a plotter from the graph
-         *
+         * 
          * @param plotter
          */
         public void removePlotter(final Plotter plotter) {
@@ -542,7 +542,7 @@ public class Metrics {
 
         /**
          * Gets an <b>unmodifiable</b> set of the plotter objects in the graph
-         *
+         * 
          * @return
          */
         public Set<Plotter> getPlotters() {
@@ -592,7 +592,7 @@ public class Metrics {
 
         /**
          * Construct a plotter with a specific plot name
-         *
+         * 
          * @param name
          */
         public Plotter(final String name) {
@@ -601,14 +601,14 @@ public class Metrics {
 
         /**
          * Get the current value for the plotted point
-         *
+         * 
          * @return
          */
         public abstract int getValue();
 
         /**
          * Get the column name for the plotted point
-         *
+         * 
          * @return the plotted point's column name
          */
         public String getColumnName() {

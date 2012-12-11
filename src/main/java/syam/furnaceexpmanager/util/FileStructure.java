@@ -22,6 +22,7 @@ import syam.furnaceexpmanager.FurnaceExpManager;
 
 /**
  * FileStructure (FileStructure.java)
+ * 
  * @author syam(syamn)
  */
 public class FileStructure {
@@ -32,7 +33,7 @@ public class FileStructure {
 
     /**
      * Create directory
-     *
+     * 
      * @param dir
      */
     public static void createDir(final File dir) {
@@ -47,7 +48,7 @@ public class FileStructure {
 
     /**
      * Copy file from [srcPath] to [destPath] Use FileChannel#transferTo
-     *
+     * 
      * @param srcPath
      *            From Path
      * @param destPath
@@ -71,7 +72,7 @@ public class FileStructure {
 
     /**
      * Extract resource file
-     *
+     * 
      * @param from
      *            From path
      * @param to

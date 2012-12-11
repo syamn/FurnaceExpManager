@@ -8,6 +8,7 @@ import org.bukkit.permissions.Permissible;
 
 /**
  * Perms (Perms.java)
+ * 
  * @author syam(syamn)
  */
 public enum Perms {
@@ -23,7 +24,7 @@ public enum Perms {
 
     /**
      * コンストラクタ
-     *
+     * 
      * @param node
      *            権限ノード
      */
@@ -33,7 +34,7 @@ public enum Perms {
 
     /**
      * 指定したプレイヤーが権限を持っているか
-     *
+     * 
      * @param player
      *            Permissible. Player, CommandSender etc
      * @return boolean

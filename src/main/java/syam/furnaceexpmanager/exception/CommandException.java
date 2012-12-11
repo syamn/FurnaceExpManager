@@ -6,12 +6,13 @@ package syam.furnaceexpmanager.exception;
 
 /**
  * CommandException (CommandException.java)
+ * 
  * @author syam(syamn)
  */
 public class CommandException extends Exception {
-	private static final long serialVersionUID = -1945371733591514553L;
+    private static final long serialVersionUID = -1945371733591514553L;
 
-	public CommandException(String message) {
+    public CommandException(String message) {
         super(message);
     }
 

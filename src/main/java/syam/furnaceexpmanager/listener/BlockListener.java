@@ -16,26 +16,33 @@ import syam.furnaceexpmanager.util.Actions;
 
 /**
  * BlockListener (BlockListener.java)
+ * 
  * @author syam(syamn)
  */
 public class BlockListener implements Listener {
-	public final static Logger log = FurnaceExpManager.log;
-	private static final String logPrefix = FurnaceExpManager.logPrefix;
-	private static final String msgPrefix = FurnaceExpManager.msgPrefix;
+    public final static Logger log = FurnaceExpManager.log;
+    private static final String logPrefix = FurnaceExpManager.logPrefix;
+    private static final String msgPrefix = FurnaceExpManager.msgPrefix;
 
-	private final FurnaceExpManager plugin;
+    private final FurnaceExpManager plugin;
 
-	public BlockListener(final FurnaceExpManager plugin){
-		this.plugin = plugin;
-	}
+    public BlockListener(final FurnaceExpManager plugin) {
+        this.plugin = plugin;
+    }
 
-	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
-	public void onFurnaceExtract(final FurnaceExtractEvent event){
-		Actions.debug("&c=========");
-		Actions.debug("getPlayer().getName(): "+ ((event.getPlayer() != null)?event.getPlayer().getName():"null"));
-		Actions.debug("getBlock().getType().name(): "+ ((event.getBlock() != null)?event.getBlock().getType().name():"null"));
-		Actions.debug("getItemType().name(): "+ ((event.getItemType() != null)?event.getItemType().name():"null"));
-		Actions.debug("getExpToDrop(): "+event.getExpToDrop());
-		Actions.debug("event.getItemAmount(): "+event.getItemAmount());
-	}
+    @EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
+    public void onFurnaceExtract(final FurnaceExtractEvent event) {
+        Actions.debug("&c=========");
+        Actions.debug("getPlayer().getName(): "
+                + ((event.getPlayer() != null) ? event.getPlayer().getName()
+                        : "null"));
+        Actions.debug("getBlock().getType().name(): "
+                + ((event.getBlock() != null) ? event.getBlock().getType()
+                        .name() : "null"));
+        Actions.debug("getItemType().name(): "
+                + ((event.getItemType() != null) ? event.getItemType().name()
+                        : "null"));
+        Actions.debug("getExpToDrop(): " + event.getExpToDrop());
+        Actions.debug("event.getItemAmount(): " + event.getItemAmount());
+    }
 }

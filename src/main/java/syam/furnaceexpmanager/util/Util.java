@@ -11,12 +11,13 @@ import java.util.Iterator;
 
 /**
  * Util (Util.java)
+ * 
  * @author syam(syamn)
  */
 public class Util {
     /**
      * 文字列が整数型に変換できるか返す
-     *
+     * 
      * @param str
      *            チェックする文字列
      * @return 変換成功ならtrue、失敗ならfalse
@@ -32,7 +33,7 @@ public class Util {
 
     /**
      * 文字列がdouble型に変換できるか返す
-     *
+     * 
      * @param str
      *            チェックする文字列
      * @return 変換成功ならtrue、失敗ならfalse
@@ -48,7 +49,7 @@ public class Util {
 
     /**
      * PHPの join(array, delimiter) と同じ関数
-     *
+     * 
      * @param s
      *            結合するコレクション
      * @param delimiter
@@ -73,7 +74,7 @@ public class Util {
 
     /**
      * ファイル名から拡張子を返します
-     *
+     * 
      * @param fileName
      *            ファイル名
      * @return ファイルの拡張子
@@ -90,26 +91,30 @@ public class Util {
 
     /**
      * 現在のUnix秒を取得する
+     * 
      * @return long unixSec
      */
-    public static Long getCurrentUnixSec(){
+    public static Long getCurrentUnixSec() {
         return System.currentTimeMillis() / 1000;
     }
 
     /**
      * Unix秒からDateを取得して返す
+     * 
      * @return Date
      */
-    public static Date getDateByUnixTime(long unixSec){
+    public static Date getDateByUnixTime(long unixSec) {
         return new Date(unixSec * 1000);
     }
 
     /**
      * Unix秒を yy/MM/dd HH:mm:ss フォーマットにして返す
-     * @param unixSec Unix秒
+     * 
+     * @param unixSec
+     *            Unix秒
      * @return yy/MM/dd HH:mm:ss
      */
-    public static String getDispTimeByUnixTime(long unixSec){
+    public static String getDispTimeByUnixTime(long unixSec) {
         SimpleDateFormat sdf = new SimpleDateFormat("yy/MM/dd HH:mm:ss");
         return sdf.format(new Date(unixSec * 1000));
     }

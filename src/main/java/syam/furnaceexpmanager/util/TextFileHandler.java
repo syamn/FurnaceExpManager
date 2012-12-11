@@ -16,6 +16,7 @@ import java.util.List;
 
 /**
  * TextFileHandler (TextFileHandler.java)
+ * 
  * @author syam(syamn)
  */
 public class TextFileHandler {
@@ -34,7 +35,7 @@ public class TextFileHandler {
 
     /**
      * ファイルを行ごとに全取得
-     *
+     * 
      * @return 行ごとのList<String>
      * @throws FileNotFoundException
      * @throws IOException
@@ -60,7 +61,7 @@ public class TextFileHandler {
 
     /**
      * ファイルを書き込み
-     *
+     * 
      * @param data
      * @throws IOException
      */
@@ -81,7 +82,7 @@ public class TextFileHandler {
 
     /**
      * ファイルの最終行に追記
-     *
+     * 
      * @param line
      * @throws IOException
      */

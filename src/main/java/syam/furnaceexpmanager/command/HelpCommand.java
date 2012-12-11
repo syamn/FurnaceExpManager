@@ -8,6 +8,7 @@ import syam.furnaceexpmanager.util.Actions;
 
 /**
  * HelpCommand (HelpCommand.java)
+ * 
  * @author syam(syamn)
  */
 public class HelpCommand extends BaseCommand {

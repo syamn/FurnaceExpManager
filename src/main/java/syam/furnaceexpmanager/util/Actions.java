@@ -26,6 +26,7 @@ import syam.furnaceexpmanager.FurnaceExpManager;
 
 /**
  * Actions (Actions.java)
+ * 
  * @author syam(syamn)
  */
 public class Actions {
@@ -45,7 +46,7 @@ public class Actions {
     /****************************************/
     /**
      * メッセージをユニキャスト
-     *
+     * 
      * @param message
      *            メッセージ
      */
@@ -58,7 +59,7 @@ public class Actions {
 
     /**
      * タスク実行者にメッセージを送信する
-     *
+     * 
      * @param msg
      */
     public static void sendMessage(String senderName, String msg) {
@@ -81,7 +82,7 @@ public class Actions {
 
     /**
      * メッセージをブロードキャスト
-     *
+     * 
      * @param message
      *            メッセージ
      */
@@ -95,7 +96,7 @@ public class Actions {
 
     /**
      * メッセージをワールドキャスト
-     *
+     * 
      * @param world
      * @param message
      */
@@ -111,7 +112,7 @@ public class Actions {
 
     /**
      * メッセージをパーミッションキャスト(指定した権限ユーザにのみ送信)
-     *
+     * 
      * @param permission
      *            受信するための権限ノード
      * @param message
@@ -135,7 +136,7 @@ public class Actions {
     /****************************************/
     /**
      * 文字配列をまとめる
-     *
+     * 
      * @param s
      *            つなげるString配列
      * @param glue
@@ -157,7 +158,7 @@ public class Actions {
 
     /**
      * コマンドをコンソールから実行する
-     *
+     * 
      * @param command
      */
     public static void executeCommandOnConsole(String command) {
@@ -166,7 +167,7 @@ public class Actions {
 
     /**
      * 文字列の中に全角文字が含まれているか判定
-     *
+     * 
      * @param s
      *            判定する文字列
      * @return 1文字でも全角文字が含まれていればtrue 含まれていなければfalse
@@ -185,7 +186,7 @@ public class Actions {
 
     /**
      * 現在の日時を yyyy-MM-dd HH:mm:ss 形式の文字列で返す
-     *
+     * 
      * @return
      */
     public static String getDatetime() {
@@ -197,7 +198,7 @@ public class Actions {
 
     /**
      * 座標データを ワールド名:x, y, z の形式の文字列にして返す
-     *
+     * 
      * @param loc
      * @return
      */
@@ -213,7 +214,7 @@ public class Actions {
 
     /**
      * デバッグ用 syamnがオンラインならメッセージを送る
-     *
+     * 
      * @param msg
      */
     public static void debug(String msg) {
@@ -228,7 +229,7 @@ public class Actions {
     /****************************************/
     /**
      * ログファイルに書き込み
-     *
+     * 
      * @param file
      *            ログファイル名
      * @param line
