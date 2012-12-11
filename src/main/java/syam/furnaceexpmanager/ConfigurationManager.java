@@ -123,7 +123,7 @@ public class ConfigurationManager {
             table.put(name.toUpperCase(Locale.ENGLISH),
                     conf.getString("ExpTable." + name + ".Value", null));
         }
-        log.info(logPrefix + table.size() + " material(s)i data loaded!");
+        log.info(logPrefix + table.size() + " material(s) data loaded!");
     }
 
     /* ***** Begin Configuration Getters *********************** */
