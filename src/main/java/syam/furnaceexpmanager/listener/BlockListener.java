@@ -40,14 +40,15 @@ public class BlockListener implements Listener {
         final Player player = event.getPlayer();
 
         String valueStr = conf.getExpValue(event.getItemType().name());
-        if (conf.isDebug()) Actions.message(player, "[Debug] Get config value: " + ((valueStr == null) ? "null" : valueStr));
+        if (conf.isDebug())
+            Actions.message(player, msgPrefix + "[Debug] Get config value '" + event.getItemType().name()+ "': " + ((valueStr == null) ? "null" : "'"+valueStr+"'"));
         if (valueStr == null) return;
 
         boolean perc = false;
         if (valueStr.endsWith("%")){
             perc = true;
             valueStr = valueStr.replace("%", "");
-            if (conf.isDebug()) Actions.message(player, "[Debug] Using percentage value: " + valueStr);
+            if (conf.isDebug()) Actions.message(player, msgPrefix + "[Debug] Using percentage value: " + valueStr);
         }
 
         if (!Util.isDouble(valueStr)){
@@ -60,14 +61,14 @@ public class BlockListener implements Listener {
         if (perc){
             value = value / 100;
             result = (int)(event.getExpToDrop() * value);
-            if (conf.isDebug()) Actions.message(player, "[Debug] " + event.getExpToDrop() + "*" + value + " => (int)" + event.getExpToDrop() * value);
+            if (conf.isDebug()) Actions.message(player, msgPrefix + "[Debug] " + event.getExpToDrop() + "*" + value + " => (int)" + event.getExpToDrop() * value);
         }
         else{
             result = (int)(event.getItemAmount() * value);
-            if (conf.isDebug()) Actions.message(player, "[Debug] " + event.getItemAmount() + "*" + value + " => (int)" + event.getItemAmount() * value);
+            if (conf.isDebug()) Actions.message(player, msgPrefix + "[Debug] " + event.getItemAmount() + "*" + value + " => (int)" + event.getItemAmount() * value);
         }
 
-        if (conf.isDebug()) Actions.message(player, "Set ExpAmount: " + result);
+        if (conf.isDebug()) Actions.message(player, msgPrefix + "[Debug] Set ExpAmount: " + result);
         event.setExpToDrop(result);
     }
 }
