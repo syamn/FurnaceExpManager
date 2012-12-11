@@ -25,7 +25,7 @@ import syam.furnaceexpmanager.util.Metrics;
 
 /**
  * FurnaceExpManager (FurnaceExpManager.java)
- * 
+ *
  * @author syam(syamn)
  */
 public class FurnaceExpManager extends JavaPlugin {
@@ -35,7 +35,6 @@ public class FurnaceExpManager extends JavaPlugin {
     public final static String msgPrefix = "&6[FurnaceExpManager] &f";
 
     // ** Listener **
-    BlockListener blockListener = new BlockListener(this);
 
     // ** Commands **
     private List<BaseCommand> commands = new ArrayList<BaseCommand>();
@@ -71,7 +70,7 @@ public class FurnaceExpManager extends JavaPlugin {
         }
 
         // Regist Listeners
-        pm.registerEvents(blockListener, this);
+        pm.registerEvents(new BlockListener(this), this);
 
         // コマンド登録
         registerCommands();
@@ -159,7 +158,7 @@ public class FurnaceExpManager extends JavaPlugin {
 
     /**
      * デバッグログ
-     * 
+     *
      * @param msg
      */
     public void debug(final String msg) {
@@ -171,7 +170,7 @@ public class FurnaceExpManager extends JavaPlugin {
     /* getter */
     /**
      * コマンドを返す
-     * 
+     *
      * @return List<BaseCommand>
      */
     public List<BaseCommand> getCommands() {
@@ -180,7 +179,7 @@ public class FurnaceExpManager extends JavaPlugin {
 
     /**
      * 設定マネージャを返す
-     * 
+     *
      * @return ConfigurationManager
      */
     public ConfigurationManager getConfigs() {
@@ -189,7 +188,7 @@ public class FurnaceExpManager extends JavaPlugin {
 
     /**
      * インスタンスを返す
-     * 
+     *
      * @return FurnaceExpManagerインスタンス
      */
     public static FurnaceExpManager getInstance() {
