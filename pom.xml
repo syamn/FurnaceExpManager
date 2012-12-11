@@ -2,7 +2,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>syam.furnaceexpmanager</groupId>
   <artifactId>FurnaceExpManager</artifactId>
-  <version>1.0</version>
+  <version>1.1-SNAPSHOT</version>
   <name>FurnaceExpManager</name>
   <description>Minecraft FurnaceExpManager plugin</description>
 
