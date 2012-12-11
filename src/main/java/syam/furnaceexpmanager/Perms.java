@@ -19,7 +19,7 @@ public enum Perms {
     ;
 
     // ノードヘッダー
-    final String HEADER = "advertise.";
+    final String HEADER = "furnaceexp.";
     private String node;
 
     /**
