@@ -120,8 +120,7 @@ public class ConfigurationManager {
                 continue;
             }
 
-            table.put(name.toUpperCase(Locale.ENGLISH),
-                    conf.getString("ExpTable." + name + ".Value", null));
+            table.put(mat.name(), conf.getString("ExpTable." + name + ".Value", null));
         }
         log.info(logPrefix + table.size() + " material(s) data loaded!");
     }
