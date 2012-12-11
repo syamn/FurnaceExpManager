@@ -5,14 +5,19 @@
 package syam.furnaceexpmanager;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Locale;
 import java.util.logging.Logger;
 
+import org.bukkit.Material;
+import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.FileConfiguration;
 
 import syam.furnaceexpmanager.util.FileStructure;
 
 /**
  * ConfigurationManager (ConfigurationManager.java)
+ *
  * @author syam(syamn)
  */
 public class ConfigurationManager {
@@ -30,7 +35,7 @@ public class ConfigurationManager {
     private File pluginDir;
 
     // hookup plugin
-    private boolean useVault;
+    private HashMap<String, String> table = new HashMap<String, String>();
 
     /**
      * Constructor
@@ -60,6 +65,8 @@ public class ConfigurationManager {
         conf = plugin.getConfig();
 
         checkver(conf.getInt("DontTouchThisConfig", 1));
+
+        mappingTable();
     }
 
     /**
@@ -91,7 +98,40 @@ public class ConfigurationManager {
         }
     }
 
+    private void mappingTable() {
+        table.clear();
+
+        final Object obj = conf.get("ExpTable");
+        if (obj == null)
+            return;
+
+        MemorySection expTable = (MemorySection) obj;
+        for (String name : expTable.getKeys(false)) {
+            // check isValid material
+            Material mat = Material.valueOf(name.toUpperCase(Locale.ENGLISH));
+            if (mat == null) {
+                log.warning("Invalid material, skipping line: " + name);
+                continue;
+            }
+
+            // check Value key
+            if (conf.get("ExpTable." + name + ".Value") == null) {
+                log.warning("Value key not found, skipping line: " + name);
+                continue;
+            }
+
+            table.put(name.toUpperCase(Locale.ENGLISH),
+                    conf.getString("ExpTable." + name + ".Value", null));
+        }
+        log.info(logPrefix + table.size() + " material(s)i data loaded!");
+    }
+
     /* ***** Begin Configuration Getters *********************** */
+
+    // get ExpTable
+    public String getExpValue(final String name) {
+        return table.get(name);
+    }
 
     // Debug
     public boolean isDebug() {

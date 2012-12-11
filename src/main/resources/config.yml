@@ -1,0 +1,23 @@
+# FurnaceExpManager Configuration file!
+# @author syamn <admin@sakura-server.net>
+# github: https://github.com/syamn/FurnaceExpManager
+
+#===============#
+#   Exp Table   #
+#===============#
+ExpTable:
+    DIAMOND:
+        Value: 0.5
+    IRON_INGOT:
+        Value: 0.3
+
+#==================#
+#   Debug Config   #
+#==================#
+Debug: false
+
+#==================#
+#   DO NOT TOUCH   #
+#==================#
+# Do not touch this option! It is a check if you are running the recent configuration version
+DontTouchThisConfig: 1
