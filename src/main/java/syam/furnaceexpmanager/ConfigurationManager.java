@@ -56,8 +56,7 @@ public class ConfigurationManager {
         // get config.yml path
         File file = new File(pluginDir, "config.yml");
         if (!file.exists()) {
-            FileStructure.extractResource("/config.yml", pluginDir, false,
-                    false);
+            FileStructure.extractResource("/config.yml", pluginDir, false, false);
             log.info("config.yml is not found! Created default config.yml!");
         }
 
@@ -108,19 +107,20 @@ public class ConfigurationManager {
         MemorySection expTable = (MemorySection) obj;
         for (String name : expTable.getKeys(false)) {
             // check isValid material
-            Material mat = Material.valueOf(name.toUpperCase(Locale.ENGLISH));
+            Material mat = Material.getMaterial((name.toUpperCase(Locale.ENGLISH)));
             if (mat == null) {
                 log.warning("Invalid material, skipping line: " + name);
                 continue;
             }
 
             // check Value key
-            if (conf.get("ExpTable." + name + ".Value") == null) {
+            String value = conf.getString("ExpTable." + name + ".Value", null);
+            if (value == null) {
                 log.warning("Value key not found, skipping line: " + name);
                 continue;
             }
 
-            table.put(mat.name(), conf.getString("ExpTable." + name + ".Value", null));
+            table.put(mat.name(), value);
         }
         log.info(logPrefix + table.size() + " material(s) data loaded!");
     }
