@@ -5,11 +5,16 @@
 #===============#
 #   Exp Table   #
 #===============#
+# Material names refer to http://jd.bukkit.org/apidocs/org/bukkit/Material.html
+# Configure exp amounts per material, support percentage value.
+# Value: 0 to disable exp drop.
 ExpTable:
     DIAMOND:
-        Value: 0.5
+        Value: 80%
     IRON_INGOT:
-        Value: 0.3
+        Value: 0
+    GOLD_INGOT:
+        Value: 0.8
 
 #==================#
 #   Debug Config   #
