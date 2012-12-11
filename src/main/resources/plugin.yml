@@ -1,0 +1,17 @@
+##  Plugin Information  ##
+name: FurnaceExpManager
+version: version-number-unknown
+main: syam.furnaceexpmanager.FurnaceExpManager
+description: FurnaceExpManager Plugin
+website: http://sakura-server.net/
+##  Original Author     ##
+author: syam
+commands:
+    furnaceexpmanager:
+      usage: /furnaceexpmanager - to see the help
+      aliases: [furnaceexp, fem]
+      description: To see the FurnaceExpManager help.
+permissions:
+    furnaceexp.reload:
+        default: op
+        description: Allow use reload command
